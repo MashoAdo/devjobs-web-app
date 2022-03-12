@@ -8,9 +8,8 @@ const cors = require("cors");
 const connectDB = require("./config/conncectDB");
 const mongoose = require("mongoose");
 
-// const jobs = require("./routes/jobs");
-
 const PORT = process.env.PORT || 3501;
+
 // connect to DB
 connectDB();
 
