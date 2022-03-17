@@ -19,6 +19,7 @@ server.use(express.json());
 
 // routes
 server.use("/jobs", require("./routes/jobs"));
+server.use("/", require("./routes/individualJob"));
 server.get("/", (req, res) => {
 	res.send("home page");
 });
