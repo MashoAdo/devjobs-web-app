@@ -7,6 +7,10 @@ const jobSchema = new Schema({
 		type: ObjectId,
 		required: true,
 	},
+	id: {
+		type: Number,
+		required: true,
+	},
 	company: {
 		type: String,
 		required: true,
