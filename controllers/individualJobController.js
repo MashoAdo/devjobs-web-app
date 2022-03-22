@@ -6,7 +6,7 @@ const getIndividualJob = async (req, res) => {
 	const id = req.params["id"];
 	try {
 		DevJob.findById(id, (err, job) => {
-			if (err) throw "fetching from db failed";
+			if (err) throw err;
 
 			res.send(job);
 		});
