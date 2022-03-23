@@ -24,7 +24,7 @@ server.use("/", require("./routes/individualJob"));
 
 // server build(contains React UI)
 server.get("/", (req, res) => {
-	res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+	res.sendFile(path.join(__dirname, "client/build/index.html"));
 });
 
 // listens to server once connection to database has been established
@@ -32,6 +32,6 @@ mongoose.connection.once("open", () => {
 	console.log("Connected to DB");
 
 	server.listen(`${PORT}`, () => {
-		console.log(`Server is up and running ${PORT}`);
+		console.log(`Server is up and running at PORT: ${PORT}`);
 	});
 });
