@@ -13,11 +13,10 @@ const PORT = process.env.PORT || 3501;
 console.log();
 // connect to DB
 connectDB();
-console.log(process.env.PWD);
 // middlewares
 server.use(cors());
 server.use(express.json());
-server.use(express.static(path.join(process.env.PWD, "client/build")));
+server.use(express.static(path.join(process.env.PWD, "/client/build")));
 
 // routes
 server.use("/jobs", require("./routes/jobs"));
@@ -25,7 +24,7 @@ server.use("/", require("./routes/individualJob"));
 
 // server build(contains React UI)
 server.get("/", (req, res) => {
-	res.sendFile(path.join(process.env.PWD, "client/build/index.html"));
+	res.sendFile(path.join(process.env.PWD, "/client/build/index.html"));
 });
 
 // listens to server once connection to database has been established
